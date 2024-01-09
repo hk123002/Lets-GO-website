@@ -1,0 +1,83 @@
+/* Screens Between 1440px and 1199.98px ( max-width:1200px & min-width:992px )*/
+
+@media(min-width:769px) and (max-width:1024px) {
+
+    // Download Section 
+    #download-section {
+
+        .app-screen {
+            top: 40px;
+            height: auto;
+            width: 165px;
+            transform: rotate(-25deg);
+            right: -40%;
+        }
+
+        &.show .app-screen {
+            right: -20px;
+
+
+        }
+    }
+
+    // Testimonials 
+    #testimonials-section {
+        #testimonials-carousel {
+            &.style-2 .carousel .owl-carousel {
+                .owl-stage-outer .owl-stage {
+                    .card .card-body .clients-images img {
+                        width: 190px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/*  Large devices (desktops, 992px and up) */
+
+@include media-breakpoint-up(lg) {
+    body {
+        &>#header {
+            #navbar {
+                .navbar-nav {
+                    .nav-item {
+                        .nav-link {
+                            padding: 22px 10px 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // Pices 
+    #pricing-section {
+        .packages {
+
+            &.style-2 {
+
+                [class*=col] {
+                    padding: 0;
+                }
+
+                .plan {
+                    width: 100%;
+
+                    &.recommended {
+                        transform: scale(1.1);
+                    }
+                }
+            }
+        }
+    }
+
+    #download-section.style-2 .download-btns [class*=btn] {
+        margin-left: 0;
+    }
+
+}
+
+/* Large devices (desktops, less than 1200px) */
+
+@include media-breakpoint-down(lg) {}

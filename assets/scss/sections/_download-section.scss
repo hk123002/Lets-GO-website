@@ -1,0 +1,67 @@
+/* =========================================
+ Download Section 
+ =========================================*/
+
+#download-section {
+    background: color(gradient);
+    overflow: hidden;
+
+    .section-title {
+        color: color(theme-white);
+        margin-bottom: 30px;
+    }
+
+    .app-screen {
+        width: 225px;
+        position: absolute;
+        top: 30px;
+        right: -50%;
+        transform: rotate(-30deg);
+    }
+
+    &.show {
+        .app-screen {
+            right: 0;
+        }
+    }
+
+    &.style-2 {
+        .section-title {
+            p {
+                color: color(theme-white);
+            }
+        }
+
+        .app-screen {
+            position: relative;
+            transform: none;
+            width: 265px;
+            right: 0;
+            top: 0;
+            opacity: 0;
+
+        }
+
+        &.show {
+            .app-screen {
+                @include bounceIn();
+                opacity: 1;
+            }
+        }
+
+
+    }
+}
+
+.download-btns {
+    [class*=btn] {
+        margin: 5px 20px;
+        font-size: 16px;
+        width: 189px;
+        display: inline-block;
+
+        i {
+            font-size: 19px;
+        }
+    }
+}

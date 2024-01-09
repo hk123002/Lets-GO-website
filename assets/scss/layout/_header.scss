@@ -1,0 +1,142 @@
+/* =========================================
+ Header 
+ =========================================*/
+
+body {
+    &>#header {
+        #navbar {
+
+            box-shadow: $shadow-box;
+            background: color(gradient);
+
+            &:not(.scrolling) {
+                box-shadow: none;
+                background: transparent;
+            }
+
+            .navbar-nav {
+                padding: 0 0;
+                margin-left: auto;
+
+                .nav-item {
+                    .nav-link {
+                        text-transform: capitalize;
+                        color: color(theme-white) ;
+                        font-size: 18px;
+                        padding: 10px;
+                        border-radius: 0;
+                    }
+
+                    &:hover,
+                    &:focus {
+                        .nav-link:not(.active) {
+                            color: $color-black;
+                        }
+                    }
+
+                    &.show .nav-link,
+                    .nav-link.active:not(.btn) {
+                        color: $color-black;
+                        background-color: transparent;
+
+                    }
+                }
+
+            }
+
+            .navbar-toggler {
+                outline: 0;
+                border: 0;
+                font-size: 23px;
+                padding-top: 28px;
+                overflow: hidden;
+                position: relative;
+
+                span {
+                    width: 20px;
+                    height: 2px;
+                    background: color(theme-white) ;
+                    display: block;
+                    margin: 5px 0;
+                    transition: all .5s ease;
+
+                    @for $i from 1 through 3 {
+                        &:nth-child(#{$i}) {
+                            $delayTime: 100 * $i+ms;
+                            transition-delay: $delayTime;
+
+                        }
+                    }
+                }
+
+                &[aria-expanded="true"] {
+                    z-index: 2;
+                    display: block;
+
+                    span {
+                        background: $color-black;
+
+                        &:not(:first-child):not(:last-child) {
+                            width: 0;
+                        }
+
+                        &:first-child {
+                            transform: rotate(45deg)translate(5px, 8px);
+                        }
+
+                        &:last-child {
+                            transform: rotate(-45deg)translate(2px, -5px);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.dropdown {
+    .dropdown-toggle::after {
+        vertical-align: middle !important;
+        content: '\f078';
+        font-family: 'Font Awesome 5 Free';
+        font-weight: 900;
+        border: 0;
+        font-size: 11px;
+        margin: 0 3px;
+        display: inline;
+    }
+
+    .dropdown-menu {
+        border-radius: 10px;
+        overflow: hidden;
+        border: 0;
+        filter: drop-shadow(0 20px 10px rgba(0, 0, 0, .1));
+        padding: 0;
+
+        * {
+            text-transform: capitalize;
+        }
+
+        .dropdown-header {
+            font-weight: 800;
+        }
+
+        .dropdown-item {
+            font-size: .9rem;
+            font-weight: 500;
+
+            &.active,
+            &:focus {
+                background: color(main);
+            }
+
+            &:not(.active):hover {
+                background: #e6e4e4;
+            }
+        }
+
+        &.show {
+            @include fadeInUp();
+        }
+    }
+}

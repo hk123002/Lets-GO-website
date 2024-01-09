@@ -1,0 +1,150 @@
+/* =========================================
+ Blogs Section 
+ =========================================*/
+/* Blog Style */
+.blog {
+    position: relative;
+    overflow: hidden;
+    padding: 0;
+    border-radius: 10px;
+    box-shadow: $shadow-box-light;
+    border: 0;
+    max-width: 349px;
+    margin: 30px auto 0;
+    // border-color:color(theme-white-dark);
+
+    [class*=card-img],
+    [class*=card-img] img {
+        height: 400px;
+    }
+
+    .card-body {
+        background-color: #fff;
+        position: relative;
+
+        .card-title {
+
+            // Title 
+            .blog-title {
+                color: $color-black;
+                margin-bottom: 5px;
+
+                a {
+                    color: inherit;
+
+                    &:hover,
+                    &:focus {
+                        color: inherit;
+                    }
+                }
+            }
+
+            // Info 
+            .blog-info {
+                text-transform: capitalize;
+                font-size: 13px;
+                margin: 0;
+                padding: 0;
+
+                i,
+                span {
+                    padding: 0 2px;
+                    display: inline-block;
+                }
+
+                li:first-child {
+                    color: color(secondary);
+                }
+            }
+        }
+
+        .card-text {
+            color: $color-gray;
+            font-size: 14px;
+            margin-bottom: .75rem;
+            padding: 0;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 90%;
+
+        }
+
+        [class*=btn] {
+            position: absolute;
+            right: 10px;
+            bottom: 10px;
+            width: 35px;
+            height: 35px;
+            box-shadow: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            &:hover,
+            &:focus {
+                box-shadow: $shadow-box;
+            }
+        }
+
+
+    }
+
+    &:hover,
+    &:focus {
+        box-shadow: $shadow-box;
+    }
+}
+
+/* Section Style */
+#blog-section {
+    overflow: hidden;
+
+    [class*=col-xl-4] {
+        &:nth-child(2) {
+            z-index: 2;
+        }
+    }
+}
+
+/* Blogs List */
+.blog-list {
+
+    /* masonry-blogs */
+    &.masonry-view {
+        .card-columns {
+
+            .card,
+            .blog {
+                display: inline-block;
+
+                [class*=card-img],
+                [class*=card-img] img {
+                    height: inherit;
+                    max-height: inherit;
+                }
+
+            }
+        }
+    }
+
+    .col-lg-8>& {
+
+        /* masonry-blogs */
+        &.masonry-view {
+            .card-columns {
+                column-count: 2;
+            }
+        }
+    }
+
+    /* Load More */
+    .load-more {
+        display: block;
+        margin: 60px auto 0;
+        padding: 10px 40px;
+
+    }
+}

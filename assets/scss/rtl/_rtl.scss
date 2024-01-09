@@ -1,0 +1,240 @@
+/* =========================================
+ RTL Style  
+ =========================================*/
+
+
+// Main rules  
+body[dir=rtl] {
+    font-family: font(rtl);
+    direction: rtl;
+    text-align: right;
+
+    .list-inline {
+        padding-right: 0;
+
+    }
+
+    .list-inline-item {
+        &:not(:first-child) {
+            margin-right: .5rem;
+        }
+
+        &:first-child {
+            margin-right: 0;
+        }
+    }
+
+    // Header
+    &>#header {
+        #navbar {
+            .navbar-nav {
+                margin-left: inherit;
+                margin-right: auto;
+            }
+        }
+    }
+
+    // Footer
+    &>footer {}
+
+    // Title 
+    .title {
+        *:not(i):not(p):not(small) {
+            letter-spacing: -1px;
+
+        }
+
+        &.style-2:before {
+            left: inherit;
+            right: 0;
+        }
+    }
+
+    // Sections 
+    section {
+        .container {
+            &::before {
+                transform: scale(-1, 1);
+            }
+        }
+    }
+
+    // carousel-navigation
+    .carousel-navigation>div {
+        &::before {
+            transform: scale(-1, 1);
+            display: block;
+        }
+    }
+
+    // Intro Section
+    #intro-section {
+        .jumbotron img {
+
+            margin-right: auto;
+            margin-left: 0;
+        }
+    }
+
+    // Subscribe
+    #subscribe {
+        i {
+            transform: scale(-1, 1);
+        }
+
+        .input-group {
+            .form-control {
+                border-top-left-radius: 0;
+                border-bottom-left-radius: 0;
+                border-top-right-radius: 25px;
+                border-bottom-right-radius: 25px;
+            }
+        }
+
+        #mc_embed_signup_scroll {
+            position: relative;
+            overflow: hidden;
+        }
+    }
+
+    // buttons
+    .input-group-btn:not(:last-child) .btn,
+    .input-group-btn:not(:first-child) .btn,
+    .input-group-btn:not(:last-child) .btn {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+        border-top-left-radius: 25px;
+        border-bottom-left-radius: 25px;
+
+        &:hover,
+        &:focus {
+            border-top-left-radius: 25px;
+            border-bottom-left-radius: 25px;
+        }
+    }
+
+    .form,
+    form {
+
+        .form-group .invalid-tooltip,
+        .form-group .valid-tooltip {
+            right: inherit;
+            left: 0;
+        }
+
+        .input-group-prepend {
+            margin-left: 0;
+        }
+
+        .input-group .input-group-append {
+            right: inherit;
+            left: 20px;
+        }
+
+        &.was-validated .form-control {
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 50px;
+        }
+    }
+
+    #contact-section .contact-form .form-group .invalid-tooltip,
+    #contact-section .contact-form .form-group .valid-tooltip {
+        right: inherit;
+        left: 0;
+    }
+
+
+    // FQA Section
+    #fqa-section {
+        #accordion .card .card-header h6::before {
+            right: inherit;
+            left: 0;
+        }
+    }
+
+    // Blog
+    .blog .card-body [class*='btn'] {
+        right: inherit;
+        left: 10px;
+
+        i {
+            transform: scaleX(-1);
+        }
+    }
+
+    // Sidebar
+    #sidebar {
+        .list-group {
+            padding-right: 0;
+        }
+
+        .search .form .input-group .input-group-append {
+            right: inherit;
+            left: 0;
+        }
+
+        .categories li {
+
+            &:after,
+            &:before {
+                left: inherit;
+                right: 0;
+            }
+
+            &:before {
+                right: 4px;
+            }
+
+            a[data-toggle='collapse'] .cat_name:before {
+                left: 10px;
+                right: inherit;
+            }
+        }
+    }
+
+    // Single blog 
+    #single-blog {
+        .post .info .tags ul::before {
+            margin-right: 0;
+            margin-left: 10px;
+        }
+
+        #comments .comment .commentActions {
+            right: inherit;
+            left: 0;
+
+            i {
+                transform: scaleX(-1);
+
+            }
+        }
+    }
+
+    // Testimonials
+    #testimonials-section {
+        #testimonials-carousel {
+            &.style-2 {
+                .carousel .owl-carousel .owl-stage-outer .owl-stage .card .card-body .quote {
+                    left: 30px;
+                    right: inherit;
+                }
+            }
+        }
+       .carousel .owl-nav{
+               left: 18px;
+               margin-left: 0;
+               right: inherit;
+               margin-right: auto;
+                   direction: ltr;
+       }
+    }
+
+    // Coming Soon Page
+    &#comingSoon-page {
+        &.style-2 main {
+            section::before {
+                transform: scaleX(-1);
+            }
+        }
+    }
+}

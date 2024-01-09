@@ -1,0 +1,100 @@
+/*============================================================
+demo-[number] ClassName : demo-[number]
+==============================================================*/
+@for $i from 1 to 19 {
+    $waves-shape: 'demos-patterns/'+$i+'.png';
+
+    $demo:"demo-#{$i}";
+    $demo_no_repeat: 15;
+    $demos_need_padding: 2, 15, 16, 17, 18;
+
+
+    .#{$demo} {
+
+        #intro-section:before,
+        &>footer:before,
+        #innerPageTitle:before,
+        &#error-page header:before,
+        &#comingSoon-page.style-1 main:before,
+        &#comingSoon-page.style-1 main:after,
+        &#comingSoon-page.style-3 main:before,
+        &#comingSoon-page.style-3 main:after {
+            background-image: url($images-path+$waves-shape);
+            background-size: contain;
+            background-repeat: if($i==$demo_no_repeat, no-repeat, repeat no-repeat);
+            background-position-x: center;
+            height: if($i==$demo_no_repeat, 100%, 100px);
+
+        }
+
+        &#error-page>footer,
+        &#error-page header {
+            min-height: if($i==$demo_no_repeat, 260px, 210px);
+        }
+
+        &#error-page>footer {
+            padding-top: 100px;
+        }
+
+        //   Team Section 
+        #team-section {
+            .card {
+                [class*="card-img"] {
+
+
+                    &::before {
+                        height: 40px;
+                        top: inherit;
+                        @include backgroundImage($waves-shape, if($i==$demo_no_repeat, 100%, contain));
+                        background-position: center 101%;
+                        background-repeat: repeat no-repeat;
+
+                    }
+
+
+                }
+
+                .card-title {
+                    padding-top: 10px;
+                }
+            }
+        }
+
+        // padding
+        #contact-section {
+            @extend .pb-4;
+        }
+
+        #intro-section+section {
+            @each $demo_num in $demos_need_padding {
+                @if($i !=$demo_num) {
+                    &:not(.small-section) {
+                        @extend .pt-5;
+                    }
+
+                    &.small-section {
+                        @extend .pt-0;
+                    }
+                }
+            }
+        }
+
+        // Coming soon
+        &#comingSoon-page.style-1 main,
+        &#comingSoon-page.style-1 main,
+        &#comingSoon-page.style-3 main,
+        &#comingSoon-page.style-3 main {
+            padding: 0;
+
+            &:before,
+            &:after,
+            &:before,
+            &:after {
+                height: 100px;
+                background-size: if($i==$demo_no_repeat, cover, contain);
+
+            }
+
+        }
+    }
+}

@@ -1,0 +1,66 @@
+/* =========================================
+ Team Section 
+ =========================================*/
+
+#team-section {
+
+
+
+    .card {
+        margin: 20px auto 0;
+        overflow: hidden;
+        position: relative;
+        border-radius: $border-radius-common;
+        background: color(theme-white) ;
+        padding-bottom: 30px;
+        width: 255px;
+        text-transform: capitalize;
+        border: 0;
+        filter: drop-shadow(0 5px 11px rgba(180, 180, 180, 0.4));
+
+        .card-title {
+            padding: 20px 10px 0;
+            margin-bottom: 5px;
+            color: $color-black;
+
+            p {
+                color: $color-gray;
+            }
+        }
+
+        [class*="card-img"] {
+            overflow: hidden;
+
+            position: relative;
+
+
+            &::before {
+                content: '';
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                left: 0;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                overflow: hidden;
+                z-index: 2;
+                filter: drop-shadow(0 0px 10px rgba(0, 0, 0, 0.4));
+
+            }
+
+            img {
+                z-index: 1;
+                height: 285px;
+                width: auto;
+            }
+        }
+
+        &:hover {
+
+            .card-title {
+                color: color(secondary);
+            }
+        }
+    }
+}

@@ -1,0 +1,24 @@
+///*
+// Functions 
+//===================
+// For CSS Variables
+// For google Fonts Family ( Custom Font )
+// For Gradient settings
+//  */
+
+
+// For CSS Variables
+
+@function color($color-name) {
+    @return var(--color-#{$color-name});
+}
+
+// For google Fonts Family ( Custom Font )
+@function font($font-name) {
+    @return var(--font-#{$font-name});
+}
+
+// For Gradient settings
+@function gradient($gradient-settings) {
+    @return var(--gradient-#{$gradient-settings});
+}

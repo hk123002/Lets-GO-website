@@ -1,0 +1,256 @@
+/* =========================================
+ Testimonials Section
+ =========================================*/
+
+#testimonials-section {
+
+    .section-title {
+        margin-bottom: 0px;
+        padding: 0 20px;
+
+    }
+
+    /* Carousel */
+    #testimonials-carousel {
+        display: flex;
+        flex-flow: row;
+        justify-content: space-between;
+        align-items: center;
+
+        .carousel {
+            width: 50%;
+
+            .owl-nav {
+
+                right: 18px;
+                margin-right: 0;
+            }
+        }
+
+        .card {
+            border: 0;
+            background: transparent;
+
+            padding: 0 20px;
+
+            &:hover {
+                filter: none;
+                box-shadow: none;
+            }
+
+            .card-body {
+                box-shadow: $shadow-box-light;
+                border-radius: 20px;
+                padding: 30px;
+
+                .feedback {
+                    color: $color-black;
+                    // font-style: italic;
+                }
+
+                .card-title {
+                    margin: 0;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    color: color(secondary);
+
+                    * {
+                        margin: 0;
+                    }
+
+                    small {
+                        color: $color-gray;
+                        display: block;
+                        padding: 5px 0;
+                    }
+
+
+                }
+
+                .quote {
+                    color: color(main);
+                    font-size: 40px;
+
+                }
+            }
+
+
+
+        }
+
+        // image
+        .clients-images {
+
+            height: 100%;
+            width: auto;
+            max-width: 350px;
+            max-height: 350px;
+            overflow: hidden;
+            position: relative;
+            margin: 0 auto;
+
+            img {
+                width: 250px;
+                height: 220px;
+                min-height: auto;
+
+
+            }
+
+            &.style-1 {
+                background: linear-gradient(to top, color(main) 50%, color(secondary));
+                width: 300px;
+                height: 300px;
+
+                img {
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    right: 0;
+                    z-index: 2;
+                    margin: auto;
+                }
+
+                &:before {
+                    content: '';
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    z-index: 1;
+                    filter: drop-shadow(0 20px 10px rgba(0, 0, 0, .4));
+                }
+
+                &:after {
+                    content: '';
+                    position: absolute;
+                    background: linear-gradient(to top, color(main), transparent);
+                    width: 260px;
+                    height: 60px;
+                    z-index: 3;
+                    bottom: 130px;
+                    right: 0;
+                    left: 0;
+                    margin: auto;
+                }
+            }
+
+            &.style-2 {
+                background: transparent;
+
+                align-self: flex-start;
+
+
+                img {
+                    position: relative;
+                }
+
+                &:after {
+                    content: '';
+                    position: absolute;
+                    background: linear-gradient(to top, $color-white, transparent);
+                    width: 100%;
+                    height: 60px;
+                    z-index: 3;
+                    bottom: 0;
+                    right: 0;
+                    left: 0;
+                    margin: auto;
+                }
+
+
+            }
+        }
+
+        &.style-2 {
+            justify-content: center;
+
+
+            .carousel {
+                width: 90%;
+
+                .owl-carousel {
+                    .owl-stage-outer {
+                        z-index: 2;
+                        padding-bottom: 0;
+
+                        .owl-stage {
+                            height: 440px;
+
+                            .owl-item {
+                                display: flex;
+                                height: 100%;
+                                justify-content: center;
+                                align-items: center;
+                            }
+
+                            .card {
+                                .card-body {
+                                    padding: 30px 15px 30px 0;
+                                    width: 85%;
+                                    margin: auto;
+                                    height: fit-content;
+                                    height: -moz-fit-content;
+
+                                    .card-title {
+                                        margin-top: 10px;
+
+                                        * {
+                                            width: 100%;
+                                            text-align: center;
+                                        }
+                                    }
+
+                                    .feedback {
+                                        margin-bottom: 0;
+                                    }
+
+                                    .clients-images {
+                                        margin-top: -120px;
+                                        width: 100%;
+
+                                        img {
+                                            width: 220px;
+                                            height: auto;
+                                            filter: drop-shadow(0 3px 6px rgba(0, 0, 0, .2));
+
+                                        }
+                                    }
+
+                                    .quote {
+                                        position: absolute;
+                                        right: 10px;
+                                        font-size: 61px;
+                                        opacity: .3;
+                                        bottom: 0;
+                                        height: 61px;
+
+                                        i {
+                                            vertical-align: super;
+
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                    }
+
+                    .owl-nav {
+                        margin: auto;
+                        width: 100%;
+                        right: 0;
+                        left: 0;
+                        top: 0;
+                        bottom: 0;
+                        height: 40px;
+                        z-index: 2;
+                        position: absolute;
+                        display: flex;
+                        justify-content: space-between;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,75 @@
+/* =========================================
+ FQA  Section
+ =========================================*/
+
+#fqa-section {
+    background:color(theme-white-dark);
+
+    .app-screen {
+        max-width: 400px;
+    }
+
+    #accordion {
+        .card {
+            margin: 0.7rem 0;
+            border-radius: $border-radius-common;
+            overflow: hidden;
+            padding: 20px 30px;
+
+            &:hover {
+                filter: none;
+                box-shadow: $shadow-box-light;
+            }
+
+            // Question's Title (Header)
+            .card-header {
+                padding: 0;
+                position: relative;
+                color: $color-black;
+                cursor: pointer;
+                overflow: hidden;
+                text-transform: capitalize;
+                background: transparent;
+                border: 0;
+
+                h6 {
+                    margin: 0;
+                    transition: all .5s ease;
+                    max-width: 95%;
+
+
+
+                    &::before {
+                        content: '\f078';
+                        position: absolute;
+                        right: 0;
+                        color: color(main);
+                        font-family: 'Font Awesome 5 Free' !important;
+                        font-weight: 900 !important;
+                    }
+
+                    &[aria-expanded=true] {
+                        padding-top: 10px;
+
+                        &::before {
+                            transform: rotate(180deg);
+                        }
+                    }
+                }
+
+            }
+
+            // Answer 
+            .card-body {
+                position: relative;
+                padding: 20px 0 10px 0;
+
+                p {
+                    font-size: 14px;
+                    color: $color-gray;
+                    margin: 0;
+                }
+            }
+        }
+    }
+}

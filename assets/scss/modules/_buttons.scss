@@ -1,0 +1,93 @@
+/* =========================================
+ Buttons 
+ =========================================*/
+
+.btn {
+
+    border-radius: $border-radius-common;
+    min-width: 20px;
+    position: relative;
+    overflow: hidden;
+    padding: 11px 18px;
+    margin: 5px;
+    text-transform: capitalize;
+    box-shadow: $shadow-box;
+    line-height: 1.6;
+    outline: 0;
+    font-size: 15px;
+    text-align: center;
+    width: min-content;
+    border: 0;
+
+    i {
+        margin: 0 7px;
+
+
+    }
+
+    &:not([class*="btn-"]) {
+        background: color(theme-white);
+        color: color(main);
+
+        &:hover,
+        &:focus,
+        &:active {
+            background: color(gradient);
+            color: color(theme-white);
+            outline: 0;
+        }
+    }
+
+
+    /* Cancel && close buttons */
+
+    &.cancel,
+    &.close,
+    &-cancel,
+    &-close,
+    &[type="reset"] {
+        background: #fff;
+        color: $color-gray;
+
+        &:hover,
+        &:focus,
+        &:active {
+            background: $color-danger !important;
+            color: color(theme-white);
+        }
+    }
+
+    /* buttons */
+
+    .buttons {
+        & {
+            min-width: 126px;
+        }
+    }
+
+    .input-group & {
+        background: color(gradient);
+        color: color(theme-white);
+        margin: 0;
+        filter: none;
+
+        &:hover,
+        &:focus {
+            background: color(theme-white);
+            color: $color-black;
+        }
+    }
+
+    .input-group-btn:not(:last-child) &,
+    .input-group-btn:not(:first-child) &,
+    .input-group-btn:not(:last-child) & {
+        border-top-right-radius: 25px;
+        border-bottom-right-radius: 25px;
+
+        &:hover,
+        &:focus {
+            border-top-right-radius: 25px;
+            border-bottom-right-radius: 25px;
+        }
+    }
+}

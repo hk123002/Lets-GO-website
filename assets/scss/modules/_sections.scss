@@ -1,0 +1,24 @@
+/* =========================================
+ Sections  
+ =========================================*/
+
+section {
+    position: relative;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    backface-visibility: hidden;
+    align-items: center;
+    background: transparent;
+
+    &:not(.small-section) {
+        min-height: 600px;
+        padding: 100px 0;
+
+    }
+
+    &.small-section {
+        min-height: 350px;
+        padding: 60px 0;
+    }
+}

@@ -1,0 +1,67 @@
+/* =========================================
+ 404 Error
+ =========================================*/
+
+#error-page {
+    position: relative;
+
+    header {
+        position: relative;
+        background: color(gradient);
+        min-height: 210px;
+
+        &:before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            bottom: 0;
+            background-position-y: bottom;
+            display: block;
+            background-color: transparent;
+        }
+    }
+
+    main {
+        background: color(theme-white) ;
+        min-height: 300px;
+       height: fit-content; height:-moz-fit-content;
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        align-items: center;
+
+        section {
+            .error-icon {
+                color: $color-black;
+                font-size: 100px;
+                text-align: center;
+                font-weight: 900;
+                height: 82px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin: 0 0 40px;
+
+            }
+
+
+            p {
+                font-weight: 400;
+                display: block;
+
+                text-transform: capitalize;
+                color: $color-gray;
+                font-size: 20px;
+            }
+        }
+    }
+
+
+    footer {
+        padding: 150px 0 10px 0;
+        min-height: 160px;
+
+    }
+
+}

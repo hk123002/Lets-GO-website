@@ -1,0 +1,19 @@
+/* =========================================
+        clients
+=========================================*/
+#clients {
+    background:color(theme-white-dark);
+    padding: 10px 0;
+
+    img {
+        width: 125px;
+        filter: grayscale(100%);
+        display: block;
+        margin: 10px auto;
+        transition: all .5s ease;
+
+        &:hover {
+            filter: grayscale(0);
+        }
+    }
+}

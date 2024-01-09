@@ -1,0 +1,521 @@
+/* =========================================
+ Basic Rules  
+    + Variables 
+    + Roboto Fonts 
+    + Cairo Fonts 
+    + Transition Effect  
+    + Main Rules of body's elements 
+    + Selection Text Color   
+    + Scroll Bar   
+    + Social Links 
+    + Owl Carousel 
+    + Logo Text 
+    + Basic Cards Rules 
+    + Masonry View 
+    + Pagination 
+    + Breadcrumb 
+    
+ =========================================*/
+
+/* Variables */
+
+:root {
+
+    /* Theme's color */
+    // each item in colors map
+    @each $name,
+    $color in $theme-colors {
+        --color-#{$name}: #{$color};
+    }
+
+    /* Theme's fonts */
+    //  each item in fonts map
+    @each $name,
+    $font in $theme-fonts {
+        --font-#{$name}: #{$font};
+    }
+
+    /* Gradient settings */
+    //  each item in gradient settings map
+    @each $name,
+    $setting in $gradient-settings {
+        --gradient-#{$name}: #{$setting};
+    }
+}
+
+/* Roboto Fonts */
+
+@font-face {
+    font-family: 'Roboto';
+    font-weight: 400;
+    src: url("../fonts/Roboto/Roboto-Regular.ttf");
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    font-weight: 500;
+    src: url("../fonts/Roboto/Roboto-Medium.ttf");
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    font-weight: 900;
+    src: url("../fonts/Roboto/Roboto-Black.ttf");
+    font-display: swap;
+}
+
+/* Cairo Fonts */
+
+@font-face {
+    font-family: 'Cairo';
+    font-weight: 400;
+    src: url("../fonts/Cairo/Cairo-Regular.ttf");
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Cairo';
+    font-weight: 500;
+    src: url("../fonts/Cairo/Cairo-SemiBold.ttf");
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Cairo';
+    font-weight: 900;
+    letter-spacing: -2px;
+    src: url("../fonts/Cairo/Cairo-Black.ttf");
+    font-display: swap;
+}
+
+/* Transition Effect  */
+
+div:not(#navbar):not(.tooltip):not([class*=col-]),
+::before,
+::after,
+a,
+img,
+.card,
+.btn,
+li,
+ul {
+    transition: all .5s ease-in-out;
+}
+
+
+/* Main Rules of the main elements */
+
+body {
+    font-family: font(ltr);
+    font-weight: 400;
+    background: color(theme-white);
+    font-size: 14px;
+    line-height: 1.6;
+
+    p {
+        font-size: 15px;
+    }
+
+    a {
+        text-decoration: none;
+
+        &:hover,
+        &:focus {
+            text-decoration: none;
+        }
+    }
+
+    [class*="title"] {
+        text-transform: capitalize;
+    }
+
+    ul.list-unstyled {
+        padding: 0;
+        margin: 0;
+    }
+
+    b,
+    strong {
+        font-weight: 900;
+    }
+
+    main {
+        position: relative;
+        min-height: 500px;
+
+        &.home {
+
+            .row {
+
+                align-items: center;
+            }
+        }
+    }
+
+    * {
+        line-height: 1.6;
+    }
+
+    .text-muted {
+        color: #8799ad !important;
+    }
+
+    .row {
+        [class*=col] {
+            transition: all .5s ease-in-out;
+        }
+
+        [class*=xl-3] {
+            @for $i from 1 through 4 {
+                &:nth-child(#{$i}) {
+                    $delayTime: 100 * $i +ms;
+                    transition-delay: $delayTime;
+                }
+            }
+
+        }
+    }
+}
+
+
+
+/*  Change Selection Text Color   */
+::selection {
+    background: #858585;
+    opacity: .8;
+    color: color(theme-white);
+    -webkit-text-fill-color: color(theme-white);
+}
+
+::-moz-selection {
+    background: #858585;
+    opacity: .8;
+    color: color(theme-white);
+}
+
+/*   Scroll Bar   */
+
+*::-webkit-scrollbar {
+    width: 7px;
+}
+
+*::-webkit-scrollbar-track {
+    background-color: #eee
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: #c5c5c5;
+    outline: 0px;
+    opacity: .6;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+    background-color: $color-gray;
+}
+
+/* Social Links */
+
+.socialMediaLinks {
+    padding: 0;
+
+    a {
+        height: 40px;
+        width: 40px;
+        border-radius: 50%;
+        text-align: center;
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        align-items: center;
+        font-size: 16px;
+
+        i {
+            margin: 0;
+            vertical-align: middle;
+        }
+
+        &:hover,
+        &:focus {
+
+            text-decoration: none;
+
+
+        }
+    }
+
+
+    &.gradient-style {
+        a {
+
+            background: color(theme-white);
+
+            i {
+                @extend .gradient-text;
+            }
+
+            &:hover,
+            &:focus {
+
+                filter: drop-shadow(0 9px 7px rgba(0, 0, 0, 0.3));
+
+            }
+        }
+
+    }
+
+    &.main-style {
+        a {
+            color: color(theme-white);
+            background: color(main);
+
+            &:hover,
+            &:focus {
+                color: color(main);
+                background: color(theme-white);
+                box-shadow: $shadow-box;
+            }
+        }
+
+    }
+
+    &.gray-style {
+        a {
+            color: $color-gray;
+            box-shadow: $shadow-box-light;
+            background: color(theme-white);
+
+            &:hover,
+            &:focus {
+                color: color(main);
+                box-shadow: $shadow-box;
+            }
+        }
+
+    }
+
+    &.white-main-style {
+        a {
+            color: color(main);
+            background: color(theme-white);
+            box-shadow: $shadow-box-light;
+
+            &:hover,
+            &:focus {
+                background: color(main);
+                color: color(theme-white);
+                box-shadow: $shadow-box;
+            }
+        }
+    }
+
+
+}
+
+/* Owl Carousel */
+
+.owl-carousel {
+    .owl-stage-outer {
+        padding: 20px 0 43px 0;
+    }
+
+    .owl-nav {
+        position: relative;
+
+        @extend .carousel-navigation;
+
+        >button {
+            position: relative;
+            top: 0;
+            bottom: 0;
+            outline: 0;
+            font-size: 15px;
+
+
+        }
+    }
+}
+
+.carousel-navigation {
+    margin: auto;
+    width: fit-content;
+    width: -moz-fit-content;
+
+
+    [class*=prev],
+    [class*=next] {
+        text-align: center;
+        border-radius: 50%;
+        padding: 10px 0;
+        height: 40px;
+        width: 40px;
+        margin: 5px;
+        font-family: 'Font Awesome 5 Free' !important;
+        font-weight: 900 !important;
+        box-shadow: $shadow-box;
+        display: inline-block;
+        cursor: pointer;
+
+        &:hover {
+            transform: scale(.9);
+            box-shadow: $shadow-box;
+            border-color: transparent;
+        }
+    }
+
+    [class*=prev],
+    button[class*=prev] {
+        background-color: color(secondary);
+        color: color(theme-white);
+
+        &::before {
+            content: "\f30a";
+        }
+    }
+
+    [class*=next],
+    button[class*=next] {
+        background-color: color(theme-white);
+        color: color(main);
+
+        &::before {
+            content: "\f30b";
+        }
+    }
+}
+
+.carousel-indicators {
+    margin: auto;
+    width: fit-content;
+    width: -moz-fit-content;
+    position: relative;
+    display: block;
+    bottom: 0;
+    top: 0;
+    margin: 20px auto;
+
+    .dot {
+        width: 13px;
+        height: 13px;
+        border-radius: 50%;
+        background-color: $color-gray-light;
+        display: inline-block;
+        margin: 0 3px;
+        cursor: pointer;
+
+        &.active {
+            background-color: color(main);
+
+        }
+    }
+}
+
+/* Logo Text */
+
+.logo {
+    width: auto;
+    max-width: 170px;
+    min-height: auto;
+}
+
+/* Basic Cards Rules */
+.card {
+    border-color: transparent;
+    border: 0;
+
+    &:hover,
+    &.active {
+        filter: drop-shadow(0 5px 11px rgba(180, 180, 180, 0.4));
+    }
+
+
+}
+
+/* Masonry View */
+.masonry-view {
+
+    .card {
+        display: inline-block;
+        box-shadow: $shadow-box;
+        overflow: hidden;
+        position: sticky;
+
+        .card-img {
+            height: inherit;
+            min-height: 245px;
+        }
+    }
+}
+
+/* Pagination */
+.pagination {
+    padding-right: 0;
+    text-transform: capitalize;
+
+    .page-item {
+        margin: 0 5px;
+
+        .page-link {
+            border: 0;
+            color: $color-gray;
+            text-align: center;
+            padding: 7px 0;
+            border-radius: 50%;
+            height: 30px;
+            width: 30px;
+        }
+
+        &:first-child,
+        &:last-child {
+            .page-link {
+                color: $color-black;
+                border-radius: 0;
+                padding: 5px 0;
+                font-size: 15px;
+                width: fit-content;
+                width: -moz-fit-content;
+
+
+                &:hover,
+                &:focus {
+                    background: transparent;
+                    color: color(main);
+                    outline: 0;
+                    box-shadow: none;
+                }
+            }
+        }
+
+        &:not(:first-child):not(:last-child) {
+            .page-link {}
+
+            &.active,
+            &:focus {
+                .page-link {
+                    background: color(main);
+                    color: color(theme-white);
+                }
+            }
+
+            &:not(.active):hover {
+                .page-link {
+                    background: $color-gray-light;
+                }
+            }
+        }
+    }
+
+}
+
+/* Breadcrumb */
+
+.breadcrumb-item+.breadcrumb-item {
+    padding: 0;
+
+    &::before {
+        padding: 0 .5rem;
+
+
+    }
+}

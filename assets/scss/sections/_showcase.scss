@@ -1,0 +1,23 @@
+/* =========================================
+ Showcase Section
+ =========================================*/
+
+#showcase {
+    .showcase-list {
+        .row {
+            margin-top: 80px;
+            min-height: 450px;
+            .imgPanel {
+                max-width: 50%;
+                margin: auto;
+            }
+            &:nth-child(odd) {
+                direction: rtl;
+            }
+            .paragraph {
+                font-size: 20px;
+                color: darken($color-gray, 20%);
+            }
+        }
+    }
+}

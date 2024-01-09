@@ -1,0 +1,75 @@
+///*
+// Global Variables 
+//===================
+// Theme's Colors 
+// colors
+// Colors & Gradient Maps for Creating CSS Root variables
+// Box-shadow
+// RTL/LTR Fonts
+// Image's Path
+// Common Border-radius
+//  */ 
+
+// Theme's Features Colors 
+$color-main: #5BE7C4;
+$color-secondary: #50C1E9;
+
+// Other Colors 
+
+$color-white:#fff;
+$color-white-dark:#f6f6f6;
+$color-black:#212121;
+$color-black-light: rgba($color-black, .2);
+$color-gray :#637282;
+$color-gray-light :#ececec;
+$color-danger:#e83535;
+
+// Fonts RTL ( Arabic ) , LTR 
+$font-ltr: 'Roboto',
+sans-serif;
+$font-rtl: 'Cairo',
+sans-serif;
+
+
+// Gradient Settings 
+$gradient-direction: to left;
+$gradient-type: linear-gradient;
+$color-gradient: linear-gradient(gradient(direction), color(main), color(secondary));
+$color-gradient2: linear-gradient(45deg, color(main), color(secondary));
+$color-gradient3: radial-gradient(color(main), color(secondary));
+
+
+$color-main-light: rgba($color-main, 8%);
+
+// Colors & Gradient Maps for Creating CSS Root variables
+$theme-colors:(main:$color-main,
+    secondary:$color-secondary,
+    gradient:$color-gradient,
+    gradient2:$color-gradient2,
+    gradient3:$color-gradient3,
+    main-light : $color-main-light,
+    theme-black:$color-black,
+    back-light:$color-black-light,
+    gray:$color-gray,
+    gray-light:$color-gray-light,
+    danger:$color-danger,
+    theme-white:$color-white,
+    theme-white-dark:$color-white-dark);
+
+$gradient-settings:(direction:$gradient-direction);
+
+
+// Box-shadow
+$shadow-box: 0 5px 20px 1px rgba(61, 61, 61, .20);
+$shadow-box-light:0 5px 20px 1px rgba($color-secondary, .15);
+
+
+
+$theme-fonts: (rtl: $font-rtl, ltr: $font-ltr);
+
+
+// Image's Path
+$images-path: "../images/";
+
+// Common Border-radius
+$border-radius-common:40px;

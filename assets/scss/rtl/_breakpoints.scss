@@ -1,0 +1,30 @@
+/* =========================================
+ Breakpoint of RTL Style  
+ =========================================*/
+@include media-breakpoint-down(md) {
+
+
+
+    body[dir=rtl] {
+
+        // Intro Section 
+        #intro-section .jumbotron img {
+            margin: 0 auto 80px;
+        }
+
+        // Header 
+        &>#header {
+            #navbar {
+                #navbar-collapse {
+
+                    left: 0;
+                    right: 100%;
+
+                    &.show {
+                        right: 0;
+                    }
+                }
+            }
+        }
+    }
+}

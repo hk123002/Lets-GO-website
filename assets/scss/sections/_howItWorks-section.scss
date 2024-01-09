@@ -1,0 +1,160 @@
+/* =========================================
+ How it working Section
+ =========================================*/
+
+#howItWorking-section {
+	background: color(theme-white) ;
+
+	.steps {
+		margin-bottom: 0;
+
+		.card {
+			border-radius: 10px;
+			overflow: hidden;
+			margin: 0 auto 30px;
+			padding: 20px;
+			width: 100%;
+			box-shadow: $shadow-box-light;
+			height: 150px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+			.card-title {
+
+				display: flex;
+				flex-flow: column;
+				align-items: center;
+				justify-content: center;
+				margin: 0;
+				text-align: center;
+
+				p {
+					margin: 0;
+					font-size: 17px;
+					font-weight: 500;
+				}
+
+				i {
+					font-size: 20px;
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					width: 45px;
+					height: 45px;
+					background: color(gradient);
+					color: color(theme-white) ;
+					border-radius: 50%;
+					text-align: center;
+					margin: 10px;
+
+				}
+			}
+
+			&:hover {
+				.card-title {
+					i {
+						box-shadow: $shadow-box;
+					}
+				}
+			}
+
+		}
+
+		[class*="col-"] {
+			&:not(:last-child):not(:first-child) {
+				.card {
+					background: color(gradient);
+
+					.card-title {
+						i {
+							background: color(theme-white) ;
+							color: color(secondary);
+						}
+					}
+
+				}
+
+			}
+
+		}
+	}
+
+	.step-num {
+		width: 40px;
+		height: 40px;
+		margin: 0 auto 20px auto;
+		text-align: center;
+		background:color(theme-white-dark);
+		font-weight: 800;
+		border-radius: 50%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+
+		p {
+			margin-bottom: 0;
+			font-size: 18px;
+			color: $color-gray;
+
+		}
+	}
+
+	&.style-2 {
+		.steps {
+			margin-bottom: 20px;
+
+			& [class*="col-"]:not(:last-child):not(:first-child),
+			& [class*="col-"] {
+				.card {
+					background: color(theme-white) ;
+
+					.card-title {
+						i {
+							background: transparent;
+							color: $color-gray;
+							width: 35px;
+							height: 35px;
+							margin: 0 10px;
+						}
+					}
+
+				}
+
+				&:hover {
+					.step-num {
+						background: color(main);
+
+						p {
+							color: color(theme-white) ;
+						}
+					}
+
+					.card {
+						background: color(main);
+
+						.card-title {
+							color: color(theme-white) ;
+
+							i {
+								box-shadow: none;
+								color: color(theme-white) ;
+							}
+						}
+					}
+
+				}
+			}
+
+
+		}
+
+		.app-screen {
+			max-width: 80%;
+			margin-top: 70px;
+			height: auto;
+			min-height: auto;
+		}
+	}
+}

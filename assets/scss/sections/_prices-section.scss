@@ -1,0 +1,188 @@
+/* =========================================
+ Prices 
+ =========================================*/
+
+#pricing-section {
+    overflow: hidden;
+
+    .plan {
+        border: 1px solid $color-white-dark;
+        border-radius: 25px;
+        overflow: hidden;
+        background: #fff;
+        text-transform: capitalize;
+        padding: 0;
+        width: 255px;
+        margin: 0 auto 20px auto;
+
+        li {
+            padding: 5px 0;
+
+            &:last-child {
+                padding-bottom: 20px;
+                padding-top: 20px;
+
+            }
+
+            &:first-child {
+                padding-top: 20px;
+                padding-bottom: 20px;
+
+            }
+
+            span {
+                padding: 0 5px;
+                display: inline-block;
+            }
+
+            p {
+                margin-bottom: 0;
+                color: $color-gray;
+                font-weight: 500;
+                font-size: 14px;
+
+                &::before {
+                    content: '';
+                    width: 27px;
+                    height: 8px;
+                    background: $color-gray-light;
+                    position: relative;
+                    left: 0;
+                    z-index: 2;
+                    display: inline-block;
+                    border-radius: 40px;
+                    margin: 1px;
+                }
+            }
+
+            b {
+                font-weight: 500;
+                color: $color-black;
+            }
+
+
+        }
+
+        //  Package's Title 
+        .title {
+            margin-bottom: 10px;
+            margin-top: 10px;
+            color: $color-gray;
+
+            h4 {
+                font-weight: bold;
+                font-size: 19px;
+                margin: 0;
+            }
+        }
+
+        [class*=btn] {
+            margin: auto;
+            box-shadow: none;
+            border: 1px solid $color-white-dark;
+            display: block;
+            width: fit-content;
+            width: -moz-fit-content;
+        }
+
+        // Package's Price 
+        .price {
+            background: color(theme-white-dark);
+            width: 150px;
+            height: 150px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            color: $color-black;
+            margin: auto;
+            // box-shadow: $shadow-box;
+
+            h1 {
+                margin: 0;
+                font-weight: 900;
+                line-height: 1;
+            }
+
+            sub {
+                font-size: 13px;
+                text-transform: capitalize;
+                font-weight: 500;
+                display: block;
+            }
+
+            sup {
+                font-size: 0.4em;
+                font-weight: 100;
+                text-transform: uppercase;
+                vertical-align: super;
+            }
+
+        }
+
+
+        // Recommended Package 
+        &.recommended {
+            box-shadow: $shadow-box-light;
+            border-color: transparent;
+
+            .price {
+                background: color(main);
+                color: color(theme-white);
+            }
+
+            .title {
+                color: color(main);
+            }
+
+            li {
+                p {
+                    &::before {
+                        background: color(main);
+                    }
+                }
+
+                a[class*=btn] {
+                    @extend .btn-main;
+                    border: 0;
+                }
+            }
+
+        }
+
+        /* Hover */
+        &:hover {
+            filter: drop-shadow(0 20px 10px rgba(180, 180, 180, 0.4));
+
+            .title {
+                color: $color-black;
+            }
+        }
+
+
+
+    }
+
+    .packages {
+
+        &.style-2 {
+            .plan {
+                margin: 0 auto 30px auto;
+
+                &:not(.recommended) {
+                    background: color(theme-white-dark);
+
+                    .price {
+                        background: color(theme-white);
+                    }
+                }
+
+                &.recommended {
+                    z-index: 2;
+                    position: relative;
+
+                }
+            }
+        }
+    }
+}

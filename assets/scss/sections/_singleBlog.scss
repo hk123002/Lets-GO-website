@@ -1,0 +1,373 @@
+/* =========================================
+ singleBlog 
+ =========================================*/
+
+#single-blog {
+
+    // title
+    .media .title {
+        margin-bottom: 10px;
+    }
+
+    // User image 
+    .userImage {
+        height: 90px;
+        width: 90px;
+        border-radius: 10px;
+        margin: 0 20px;
+        overflow: hidden;
+    }
+
+    //  Post 
+    .post {
+        margin-bottom: 40px;
+
+        i {
+            padding: 0 5px;
+        }
+
+        // Post Info 
+        .info {
+            text-transform: capitalize;
+            display: flex;
+            justify-content: space-between;
+            font-weight: 500;
+            color: $color-black;
+
+            a {
+                color: $color-black;
+
+                &:focus,
+                &:hover {
+                    color: color(main);
+                }
+            }
+
+            * {
+                font-size: 13px;
+            }
+
+            .tags {
+                ul {
+                    &::before {
+                        content: '\f02b';
+                        display: inline-block;
+                        font-family: 'Font Awesome 5 Free';
+                        font-weight: 900;
+                        margin-right: 10px;
+
+                    }
+
+                    li {
+                        margin: 0;
+
+                        &:not(:last-child) {
+                            &:after {
+                                content: ',';
+                                margin-right: .5rem;
+
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        // post details 
+        .post-details {
+            padding: 40px 0 20px;
+
+
+            // title of the post 
+            .title {
+                color: $color-black;
+                margin-bottom: 10px;
+
+                &,
+                * {
+                    font-weight: 500;
+                }
+            }
+
+            // date , tags and more
+            .info {
+                color: $color-gray;
+
+                a {
+                    color: $color-gray;
+
+                    &:hover,
+                    &:focus {
+                        color: color(main);
+                    }
+                }
+
+            }
+        }
+
+        // post image 
+        .post-image {
+            img {
+                border-top-left-radius: 10px;
+                border-top-right-radius: 10px;
+            }
+        }
+
+        // post-content 
+        .post-content {
+            padding: 0;
+            color: $color-gray;
+            font-size: 15px;
+            line-height: 1.8;
+
+            p {
+                line-height: 1.8;
+            }
+
+            // Famous Words 
+            .blockquote {
+                position: relative;
+                padding: 25px 30px;
+                color: $color-gray;
+                background:color(theme-white-dark);
+                font-size: 17px;
+                line-height: 1.8;
+                text-align: center;
+                border-radius: 10px;
+                // Common Spaces 
+                $margin_spaces: 9px;
+
+                p {
+                    i {
+                        color: color(main);
+                        display: block;
+                        font-size: 50px;
+                        margin-bottom: $margin_spaces;
+                    }
+                }
+
+                .blockquote-footer {
+                    margin-top: $margin_spaces;
+
+                }
+            }
+
+            // subTitle
+            .subTitle {
+                color: $color-black;
+                margin: 20px 0;
+            }
+
+            // List 
+            ul:not(.list-inline) {
+                li {
+                    position: relative;
+                    list-style-type: none;
+
+                    &:before {
+                        content: "\f192";
+                        font-family: "Font Awesome 5 Free";
+                        color: color(main);
+                        margin-right: 10px;
+                    }
+                }
+            }
+        }
+    }
+
+    // About Author
+    #aboutAuthor {
+        padding-top: 80px;
+
+        .media {
+            background-color:color(theme-white-dark);
+            border-radius: 10px;
+            padding: 30px 20px;
+
+            // authorName 
+            .media-heading {
+                .authorName {
+                    padding: 5px 0px 0 0;
+                    text-transform: capitalize;
+                    font-weight: 500;
+
+                }
+
+                small {
+                    color: $color-black;
+                    font-size: 80%;
+                    text-transform: capitalize;
+                    margin: 0 6px;
+                    font-weight: 400;
+                }
+            }
+
+
+
+            // About Author
+            .authorAbout {
+                font-size: 14px;
+                line-height: 1.7;
+                font-weight: 400;
+                color: $color-gray;
+            }
+        }
+
+        .socialLinks {
+            margin-bottom: 0;
+
+            a {
+                color: lighten($color-gray, 20%);
+                padding: 0 3px;
+
+                i {
+                    padding: 0;
+                }
+
+                &:hover,
+                &:focus {
+                    text-decoration: none;
+                    color: color(main);
+                }
+            }
+        }
+    }
+
+    // Comments 
+    #comments {
+        padding-top: 90px;
+
+        >.title {
+
+            span {
+                color: color(main);
+                font-weight: 500;
+            }
+        }
+
+        >div {
+            margin: 30px 0;
+
+        }
+
+        // comment 
+        .comment {
+            margin: 20px 0;
+            background-color:color(theme-white-dark);
+            border-radius: 10px;
+            padding: 30px 20px;
+
+            .media {
+
+                position: relative;
+
+                // Name & Date 
+                .media-heading {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    font-weight: 500;
+                    margin-bottom: 0;
+
+                    small {
+                        color: lighten($color-gray, 20%);
+                        font-size: 80%;
+                        font-weight: 400;
+                        padding: 0 5px;
+
+                    }
+
+                    .userName {
+                        font-weight: 500;
+
+                    }
+
+                    p {
+                        color: lighten($color-gray, 20%);
+                        font-size: 11px;
+                        font-weight: 400;
+
+                        i {
+                            padding: 0 5px;
+                        }
+                    }
+
+                }
+
+                // user comment
+                .userComment {
+                    font-size: 14px;
+                    line-height: 1.7;
+                    font-weight: 400;
+                    color: $color-gray;
+                    max-width: 90%;
+                    margin: 0;
+                }
+            }
+
+            .commentActions {
+                position: absolute;
+                right: 0;
+                bottom: 0;
+                margin: 0;
+
+                a {
+                    color: lighten($color-gray, 20%);
+                    padding: 0 3px;
+
+                    i {
+                        padding: 0;
+                    }
+
+                    &:hover,
+                    &:focus {
+                        text-decoration: none;
+                        color: color(main);
+                    }
+                }
+            }
+
+            &.replay {
+                background-color: darken($color-white-dark, 4);
+
+                .media {
+                    border-width: 1px 0 0 0;
+                    border-radius: 0;
+                    padding-left: 0;
+                    padding-right: 0;
+                }
+            }
+        }
+
+
+    }
+
+    // Add comments
+    #addComment {
+        margin-bottom: 50px;
+        padding-top: 100px;
+
+
+        form {
+            .form-control {
+                border-radius: 10px !important;
+                border-color:color(theme-white-dark);
+                background:color(theme-white-dark);
+
+                &:focus {
+                    border-color: color(main);
+                }
+            }
+
+
+        }
+    }
+
+    // Sidebar 
+    #sidebar>div {
+        &:first-child {
+            padding-top: 0;
+        }
+    }
+
+}

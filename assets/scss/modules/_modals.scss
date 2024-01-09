@@ -1,0 +1,36 @@
+/* =========================================
+ Modals 
+ =========================================*/
+
+#video-modal,
+#image-modal {
+    .fade {
+        .modal-dialog {
+            transition: transform 0.3s ease-out;
+        }
+    }
+
+    .modal-dialog {
+        box-shadow: none;
+
+        .modal-content {
+            background-color: transparent;
+            padding: 0;
+            border: 0px;
+
+            .close {
+                color: color(theme-white) ;
+                position: absolute;
+                right: -20px;
+                top: 0;
+                z-index: 9;
+            }
+
+            img {
+                margin: auto;
+                display: block;
+                width: 100%;
+            }
+        }
+    }
+}

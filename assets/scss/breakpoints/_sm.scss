@@ -1,0 +1,262 @@
+/*  Small devices (landscape phones, less than 768px) */
+
+@include media-breakpoint-down(sm) {
+
+    // Header 
+    body {
+        >#header {
+            #navbar .navbar-nav {
+                .nav-item .nav-link {
+                    padding: 5px 10px;
+                }
+            }
+
+        }
+
+        // Footer
+        >footer {
+            padding: 140px 0 60px 0;
+
+        }
+    }
+
+
+
+
+
+    // About Section
+    #about-section {
+        .card {
+            width: 80%;
+            margin-right: auto;
+            margin-left: auto;
+        }
+    }
+
+
+    // Testimonials Section
+    #testimonials-section {
+
+        #testimonials-carousel {
+            &.style-2 .carousel {
+                .owl-carousel {
+                    .owl-stage-outer .owl-stage {
+
+                        min-height: 570px;
+
+                        .card .card-body {
+                            width: 100%;
+                            padding: 0 5px 30px;
+
+                            .clients-images img {
+                                margin-top: 30px;
+
+                            }
+                        }
+
+                    }
+
+                    .owl-nav {
+                        width: fit-content;
+                        width: -moz-fit-content;
+                        top: inherit;
+                        bottom: 30px;
+
+                    }
+                }
+            }
+
+            .carousel {
+                width: 100%;
+
+                .card {
+                    width: 100%
+                }
+            }
+
+            .clients-images {
+                margin: 20px auto;
+
+                &.style-1 {
+
+                    img {
+                        right: 50px;
+                        width: 210px;
+                        height: auto;
+                    }
+
+                    &:after {
+                        bottom: 115px;
+                        width: 190px;
+                    }
+                }
+
+
+            }
+        }
+
+
+    }
+
+    // Screenshots Section 
+    #screenshots-section {
+
+        /* Screenshots Carousel */
+        #screenshots-carousel {
+            .owl-carousel {
+
+                .owl-item {
+                    transform: scale(0.6);
+
+                    &.center {
+                        transform: scale(0.8);
+
+                    }
+
+                    img {
+                        min-height: 340px;
+
+                    }
+                }
+            }
+        }
+    }
+
+    // Team & Pricing  Section
+    #team-section,
+    #pricing-section {
+        overflow-x: hidden;
+    }
+
+
+    // Blogs List 
+    .blog-list {
+
+        /* masonry-blogs */
+        &.masonry-view {
+            .card-columns {
+                column-count: 1;
+
+                .card,
+                .blog {
+                    display: block;
+
+                }
+            }
+        }
+
+        .col-lg-8>& {
+
+            /* masonry-blogs */
+            &.masonry-view {
+                .card-columns {
+                    column-count: 1;
+
+                    .blog,
+                    .card {
+                        display: block;
+                    }
+                }
+            }
+        }
+    }
+
+    // Blog
+    .blog [class*=card-img],
+    .blog [class*=card-img] img {
+        height: auto;
+    }
+
+    // Single blog
+    #single-blog {
+        .post .info {
+            flex-flow: column;
+        }
+
+        #aboutAuthor {
+            .media .media-heading {
+                small {
+                    display: block;
+                    margin: 5px 0 12px;
+
+                }
+            }
+        }
+
+        #comments {
+            .comment .media .media-heading {
+
+                align-items: flex-start;
+                flex-flow: column;
+                margin-bottom: 0
+            }
+        }
+
+        .userImage {
+            height: 70px;
+            width: 70px;
+        }
+    }
+
+
+    // Modals
+    #video-modal,
+    #image-modal {
+        .modal-dialog .modal-content .close {
+
+            right: 0;
+
+        }
+    }
+
+    // Error Page
+    #error-page {
+        header {
+            min-height: 130px;
+        }
+
+        footer {
+            padding: 80px 0 10px 0;
+        }
+    }
+
+    // Coming Soon 
+    #comingSoon-page {
+        main {
+            #subscribe {
+
+                width: 80%;
+            }
+        }
+    }
+
+    // Download Section
+    #download-section {
+        .download-btns [class*=btn] {
+            margin: 15px auto;
+            display: block;
+        }
+    }
+
+}
+
+@media (max-width:320px) {
+
+    // Testimonials Section
+    #testimonials-section {
+
+        #testimonials-carousel {
+            &.style-2 .carousel {
+                .owl-carousel {
+                    .owl-stage-outer .owl-stage {
+                        .card .card-body {
+                            .clients-images img {
+                                width: 100%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,152 @@
+/*!
+ * Main styleSheet File 
+ * Project : Xena - HTML App Landing Page Template
+ * Version : 1.0
+ * Primary use : Templates / Creative / showcase / Business /Mobile /App
+ * Authors: 
+   +   Developed(HTML Version) By: Norhan_Moh => https://themeforest.net/user/norhan_moh/portfolio
+   +   Designed(PSD Version) By: PionThemes => https://themeforest.net/user/pionthemes/portfolio
+
+
+ * Table Content :
+  -----------------
+   + VENDOR - Default fall-backs and external files.
+      ------ Google Fonts
+      ------ Bootstrap 4
+      ------ Animate.scss
+      ------ fontawesome 5
+
+   + Global -  Variable file along with starting point Mixins and Placeholders
+      ------ Variables
+      ------ Placeholders
+      ------ Mixins
+      ------ functions
+
+   + MODULES - Re-usable site elements; e.g. buttons ,lists ,tabs ,etc
+         ------ Sections Styles 
+         ------  Buttons 
+         ------  Forms 
+         ------  images 
+
+   + BASE - BasicRules , Helpers classes and Basic Pages Animations
+ 
+      ------ BasicRules
+      ------ Helpers
+      ------ pagesAnimations
+
+
+   + LAYOUT - Contains styling for larger layout components; e.g. nav, header, footer,etc
+      ------ Header 
+      ------ Footer
+      ------ Loader
+      ------ InnerPageTitle
+
+
+   + SECTIONS - Contains page-specific and sections styling
+      ------  Intro -- > #intro-section
+      ------  About -- > #about-section
+      ------  Features -- > #features-section
+      ------  Showcase -- > #showcase-section
+      ------  Contact -- > #contact
+      ------  Subscribe -- > #subscribe
+      ------  Testimonials -- > #testimonials-section
+      ------  Video -- > #video-section
+      ------  Screenshots -- > #screenshots-section
+      ------  Team -- > #team-section
+      ------  Blogs -- > #blogs-section
+      ------  Download -- > #download-section
+      ------  Prices -- > #pricing-section
+      ------  FQA -- > #fqa-section
+      ------  SingleBlog -- > #singleBlog
+      ------  Error page -- > #error-page
+      ------  Achievements -- > #achievements-section
+      ------  Blog Sidebar  -- > #blogSidebar
+      ------  Coming Soon  -- > #comingSoon-page
+
+   + Breakpoints - Contains responsive and breakpoints styling
+
+   + Demos - Contains the styles of the demos ( Add the demo class to body tag)
+
+
+ * Vendor :
+  ----------------
+   + Google Fonts 
+      -----  Roboto font For LTR : https://fonts.google.com/specimen/Roboto
+      ----- Cairo font for RTL Arabic : https://fonts.google.com/specimen/Cairo
+   + Bootstrap v4.1.1 : http://getbootstrap.com
+   + Animate.scss : https://github.com/geoffgraham/animate.scss
+   + Owl.carousel v2.3.4 : https://owlcarousel2.github.io/OwlCarousel2/
+   + Font Awesome icons free v5.0.13 : https://fontawesome.com/icons?d=gallery&m=free
+
+*/
+
+/* VENDOR - Default fall-backs and external files.
+========================================================================== */
+@import "vendor/bootstrap/bootstrap";
+@import "vendor/animate/animate";
+@import "vendor/owlCarousel/owl.carousel";
+@import "vendor/fontawesome/scss/fontawesome";
+
+/* Global -  Variable file along with starting point Mixins and Placeholders
+========================================================================== */
+@import "global/functions";
+@import "global/variables";
+@import "global/mixins";
+
+/* MODULES - Re-usable site elements; e.g. buttons ,lists ,tabs ,etc
+========================================================================== */
+@import "modules/sections";
+@import "modules/buttons";
+@import "modules/forms";
+@import "modules/images";
+@import "modules/modals";
+
+/* BASE -  BasicRules , Helpers classes and Basic Pages Animations
+========================================================================== */
+@import "base/basicRules";
+@import "base/helpers";
+@import "base/pagesAnimation";
+
+/* LAYOUT - Contains styling for larger layout components; e.g. nav, header, footer,etc
+========================================================================== */
+@import "layout/header";
+@import "layout/footer";
+@import "layout/loader";
+@import "layout/innerPageTitle";
+
+/* SECTIONS - Contains page-specific and sections styling
+========================================================================== */
+@import "sections/intro-section";
+@import "sections/about-section";
+@import "sections/features-section";
+@import "sections/howItWorks-section";
+@import "sections/video-section";
+@import "sections/testimonials-section";
+@import "sections/team-section";
+@import "sections/screenshots-section";
+@import "sections/client-section";
+@import "sections/prices-section";
+@import "sections/fqa-section";
+@import "sections/achievement-section";
+@import "sections/download-section";
+@import "sections/contact-section";
+@import "sections/sidebar";
+@import "sections/subscribe";
+@import "sections/blogs";
+@import "sections/singleBlog";
+@import "sections/404Error";
+@import "sections/comingSoon";
+
+/* Demos - Contains the styles of the demos
+========================================================================== */
+@import "demos/demos";
+
+
+/* Breakpoints - Contains responsive and breakpoints styling
+========================================================================== */
+@import "breakpoints/all";
+
+/* RTL - RTL Stying
+========================================================================== */
+@import "rtl/rtl";
+@import "rtl/breakpoints";

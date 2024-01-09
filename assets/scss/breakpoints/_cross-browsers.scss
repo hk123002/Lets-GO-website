@@ -1,0 +1,65 @@
+/* For  Safari Browsers */
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+
+    ::i-block-chrome,
+    .mask {
+        opacity: .9;
+    }
+}
+
+/* Firefox Browser*/
+
+@-moz-document url-prefix() {}
+
+/* Internet Explorer Browser*/
+
+@mixin IEStyle() {}
+
+@media all and (-ms-high-contrast: none),
+(-ms-high-contrast: active) {
+    @include IEStyle();
+}
+
+@media screen and (min-width:0\0) {
+    @include IEStyle();
+}
+
+@supports (-ms-accelerator:true) {
+    @include IEStyle();
+}
+
+@supports (-ms-ime-align:auto) {
+    @include IEStyle();
+}
+
+@media all and (-ms-high-contrast: none),
+(-ms-high-contrast: active) {
+    @include IEStyle();
+}
+
+//  Screens Min Height : 650px;
+@media(min-height:650px) {
+
+    #error-page {
+        position: static;
+
+        footer {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            padding: 170px 0 10px 0;
+
+
+        }
+
+        main {
+            position: absolute;
+            width: 100%;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+        }
+    }
+
+}

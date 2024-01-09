@@ -1,0 +1,217 @@
+/* =========================================
+Coming Soon
+ =========================================*/
+
+#comingSoon-page {
+    position: relative;
+
+    main {
+        background: color(theme-white);
+        min-height: 300px;
+        height: fit-content;
+        height: -moz-fit-content;
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        height: 100%;
+        width: 100%;
+        overflow-y: auto;
+        overflow-x: hidden;
+
+        section {
+            width: 100%;
+            height: 100%;
+            @include backgroundImage("bg-2.jpg", cover);
+
+            &:before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 100%;
+                background: linear-gradient(to bottom, #fff, rgba(225, 225, 225, .9), #fff);
+                z-index: 1;
+            }
+
+            .container {
+                position: relative;
+                z-index: 2;
+            }
+
+        }
+
+        .logo {
+            margin: 0 auto 20px;
+        }
+
+        p {
+            display: block;
+            font-weight: 400;
+            font-size: 15px;
+            color: $color-gray;
+            text-transform: capitalize;
+
+            b {
+                font-weight: 500;
+                font-size: 18px;
+                display: block;
+            }
+        }
+
+        //  CountDown 
+        #countDown {
+            margin: 20px auto;
+            padding: 0;
+
+
+            li {
+                >div {
+                    display: flex;
+                    flex-flow: column;
+                    align-items: center;
+                    justify-content: center;
+                    margin: 10px;
+                    font-weight: 900;
+                    text-transform: uppercase;
+                    text-align: center;
+                    border-radius: 50%;
+                    width: 110px;
+                    height: 110px;
+                    background: color(theme-white);
+                    box-shadow: $shadow-box;
+                    color: color(main);
+
+                    p {
+                        font-size: 42px;
+                        margin: 0;
+                        color: color(main);
+                        // @include gradient-text;
+
+                    }
+
+                }
+
+                p {
+                    padding: 12px 0;
+                    font-weight: 900;
+                    margin: 0;
+                    font-size: 15px;
+                    color: $color-black;
+                    text-transform: capitalize;
+
+                }
+            }
+
+
+        }
+
+        // Subscribe
+        #subscribe {
+
+            width: 40%;
+            margin: 30px auto;
+
+
+        }
+    }
+
+    // Styles 
+    &.style-1 {
+        main {
+            position: relative;
+            background: color(gradient);
+            min-height: 800px;
+            padding: 100px 0 !important;
+
+            &:before,
+            &:after {
+                content: '';
+                position: absolute;
+                width: 100%;
+                height: 202px;
+                display: block;
+                background-color: transparent;
+                background-position-y: bottom;
+
+            }
+
+            &:before {
+                top: 0;
+            }
+
+            &:after {
+                bottom: 0;
+                transform: rotate(180deg);
+            }
+
+        }
+
+    }
+
+    &.style-2 {
+        main {
+            section {
+                &:before {
+                    background: linear-gradient(to right, #fff 40%, color(main), color(secondary));
+                    opacity: .9;
+                }
+            }
+
+            #subscribe {
+                width: 60%;
+            }
+        }
+
+    }
+
+    &.style-3 {
+        main {
+            position: relative;
+            background: #fff;
+            min-height: 800px;
+            padding: 59px 0;
+
+            &:before,
+            &:after {
+                content: '';
+                position: absolute;
+                width: 100%;
+                height: 180px;
+                display: block;
+                background-color: transparent;
+                background-position-y: top;
+                z-index: 5;
+
+            }
+
+            &:before {
+                top: 0;
+                background-position: top;
+                z-index: 5;
+                transform: rotate(180deg);
+            }
+
+            &:after {
+                bottom: 0;
+            }
+
+            section {
+                padding: 180px 0;
+
+                &:before {
+                    background: color(gradient);
+                    opacity: .8;
+                }
+
+                p {
+                    color: $color-black;
+                }
+            }
+        }
+
+    }
+
+}

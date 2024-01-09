@@ -1,0 +1,243 @@
+/* Medium devices (tablets, 768px and up) */
+
+@include media-breakpoint-up(md) {}
+
+/*  Medium devices (tablets, less than 992px) */
+
+@include media-breakpoint-down(md) {
+
+    // Section title 
+    .section-title,
+    .section-title+p {
+        text-align: center;
+    }
+
+    // App Screen Width
+    .app-screen {
+        max-width: 290px;
+
+    }
+
+    // Header 
+    body {
+        &>#header {
+            #navbar {
+                #navbar-collapse {
+                    background: rgba(255, 255, 255, 0.90);
+                    position: fixed;
+                    height: 100%;
+                    width: 100%;
+                    top: 0;
+                    left: 100%;
+                    right: 0;
+                    text-align: center;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    .navbar-nav {
+                        padding: 0;
+                        margin: 0;
+
+                        .nav-item {
+                            .nav-link {
+                                color: $color-gray;
+
+                                &.active {
+
+                                    color: color(main);
+                                }
+
+                            }
+
+                            &:hover,
+                            &:focus {
+                                .nav-link:not(.active) {
+
+                                    color: color(main);
+                                }
+                            }
+
+                        }
+                    }
+
+                    &.show {
+                        left: 0;
+                    }
+                }
+            }
+        }
+
+
+    }
+
+
+    // InnerPageTitle
+    #innerPageTitle {
+        min-height: 400px;
+    }
+
+    // Intro Section
+
+    #intro-section {
+        .jumbotron {
+            text-align: center;
+            padding-top: 100px;
+
+            h1 {
+                font-size: 3rem;
+            }
+
+            img {
+                max-width: 290px;
+                margin-right: auto;
+                height: auto;
+                min-height: auto;
+
+
+            }
+
+            .btn {
+                margin-bottom: 5px;
+            }
+
+
+
+        }
+    }
+
+    // Testimonials Section
+    #testimonials-section {
+        &.pb-0 {
+            padding-bottom: 100px !important;
+        }
+
+        .section-title {
+            margin-bottom: 20px;
+        }
+
+        #testimonials-carousel {
+            flex-flow: column-reverse;
+
+            .carousel {
+                width: 60%;
+
+                .owl-nav {
+
+                    right: 0;
+                    left: 0;
+                    margin-right: auto;
+                    margin-left: auto;
+                }
+            }
+
+            &.style-2 .carousel .owl-carousel .owl-stage-outer {
+                .owl-stage {
+                    height: 540px;
+
+                    .card .card-body {
+                        padding: 0 35px 30px;
+
+                        .feedback {
+                            text-align: center;
+                            margin-top: 10px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // Blogs List 
+    .blog-list {
+
+        /* masonry-blogs */
+        &.masonry-view {
+            .card-columns {
+                column-count: 2;
+
+            }
+        }
+
+        .col-lg-8>& {
+
+            /* masonry-blogs */
+            &.masonry-view {
+                .card-columns {
+                    column-count: 1;
+                }
+
+                .blog,
+                .card {
+                    display: block;
+                }
+            }
+        }
+    }
+
+    // price section 
+    #pricing-section {
+        .plan {
+            margin-bottom: 30px;
+        }
+
+
+    }
+
+    // Download Section 
+    #download-section {
+
+        .app-screen {
+            display: none;
+        }
+    }
+
+    // Contact Section
+    #contact-section {
+        .contacts-info {
+            margin: auto;
+            text-align: center;
+        }
+
+        &.style-2 {
+            .contact-form {
+                width: 90%;
+                padding: 40px 30px;
+            }
+        }
+    }
+
+    // Coming Soon 
+    #comingSoon-page {
+        &.style-2 {
+            main {
+                section::before {
+                    background: linear-gradient(to bottom, #fff 40%, color(main), color(secondary))
+                }
+            }
+        }
+
+        main {
+            position: relative;
+            overflow: visible;
+
+            #subscribe {
+                width: 50%;
+            }
+        }
+
+    }
+
+    // Error Page
+    #error-page {
+        header {
+
+            min-height: 160px;
+        }
+
+        footer {
+            padding: 90px 0 10px 0;
+
+        }
+    }
+}

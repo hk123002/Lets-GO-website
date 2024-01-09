@@ -1,0 +1,70 @@
+/* =========================================
+ Loader 
+ =========================================*/
+
+
+
+#loader {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 900000;
+    overflow: hidden;
+    background: color(gradient);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+
+    .circle {
+        border-radius: 50%;
+        display: block;
+        background: #fff;
+        margin: 0px;
+        width: 30px;
+        height: 30px;
+
+    }
+
+    &:not(.hide) {
+        .circle {
+            @for $i from 1 through 4 {
+                &:nth-child(#{$i}) {
+                    $delayTime: 100 * $i+ms;
+                    animation: boxShadow 2s infinite forwards alternate;
+                    animation-delay: $delayTime;
+                }
+
+            }
+        }
+    }
+
+
+    &.hide {
+        left: -150%;
+
+    }
+
+
+}
+
+
+@keyframes boxShadow {
+
+    0%,
+    100% {
+        width: 10px;
+        height: 10px;
+        margin: 4px;
+    }
+
+    50% {
+        width: 30px;
+        height: 30px;
+        margin: 0;
+    }
+}

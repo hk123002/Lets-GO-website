@@ -1,0 +1,132 @@
+/* =========================================
+ Forms 
+ =========================================*/
+$border-radius-form:50px;
+
+.form-messages {
+    .alert {
+        display: none;
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+}
+
+.form,
+form {
+    .form-group {
+        padding-right: 0;
+        font-weight: 500;
+        position: relative;
+
+        .form-control {
+            color: $color-black;
+            font-weight: 400;
+
+            &:focus {
+                background-color: #fff;
+                border-color: color(main);
+                box-shadow: 0 0 0 0.05rem color(main);
+
+                &+.input-group-append {
+                    .input-group-text {
+                        color: color(main);
+                    }
+
+                }
+            }
+        }
+    }
+
+    .input-group-prepend {
+        margin-right: 0;
+    }
+
+    input {
+        &.form-control {
+            border-radius: $border-radius-form;
+            padding: 15px 30px;
+        }
+    }
+
+    textarea {
+        &.form-control {
+            border-radius: $border-radius-common;
+            padding: 25px 30px;
+        }
+    }
+
+    &.was-validated {
+        .form-control {
+            border-bottom-right-radius: 0;
+        }
+    }
+
+    label,
+    div:not(.input-group-append)>.btn {
+        margin: 11px;
+        font-size: 1rem;
+    }
+
+    .input-group {
+        width: 100%;
+        position: relative;
+
+        &>.form-control:not(:last-child),
+        &>.custom-select:not(:last-child) {
+            border-radius: $border-radius-form;
+            border-top-right-radius: $border-radius-form;
+            border-bottom-right-radius: $border-radius-form;
+        }
+
+        .input-group-append {
+            position: absolute;
+            right: 20px;
+            border: 0;
+            border-radius: 0;
+            height: 100%;
+            z-index: 3;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .input-group-text {
+                background: transparent;
+                color: $color-gray;
+                border: 0;
+            }
+        }
+    }
+
+}
+
+.form-group .invalid-tooltip,
+.form-group .valid-tooltip {
+    right: 0;
+}
+
+@mixin placeholder {
+    color: lighten($color-gray, 20%) !important;
+    text-transform: capitalize;
+    font-size: 14px !important;
+}
+
+// Placeholder Style
+::-webkit-input-placeholder {
+    /* Chrome/Opera/Safari */
+    @include placeholder();
+}
+
+::-moz-placeholder {
+    /* Firefox 19+ */
+    @include placeholder();
+}
+
+:-ms-input-placeholder {
+    /* IE 10+ */
+    @include placeholder();
+}
+
+:-moz-placeholder {
+    /* Firefox 18- */
+    @include placeholder();
+}

@@ -1,0 +1,34 @@
+///*
+// Mixins
+//==========
+// Background Images 
+// Wave Edge Shape Background Ex : Video & Screenshots Sections
+// Text Gradient Properties 
+// Transition Delaying children's of an element 
+//  */ 
+
+
+// Background Images 
+@mixin backgroundImage($bg-img-name, $bg-size) {
+    background: url($images-path+$bg-img-name) center center no-repeat;
+    background-size: $bg-size;
+}
+
+// Text Gradient Properties 
+@mixin gradient-text() {
+    background-image: color(gradient3);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+// Transition Delaying children's of an element 
+@mixin nthChildTransition ($elements_num) {
+    @for $i from 1 through $elements_num {
+        &:nth-child(#{$i}) {
+            $delayTime: 100 * $i +ms;
+            animation-delay: $delayTime !important;
+            transition-delay: $delayTime !important;
+        }
+    }
+}

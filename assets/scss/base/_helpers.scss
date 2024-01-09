@@ -1,0 +1,363 @@
+/*! =========================================
+    * Helpers
+        + Gradient 
+            - .gradient-background
+            - .gradient-background-2
+            - .gradient-background-3
+            - .gradient-text
+        + Background Colors
+            - .bg-color-white
+            - .bg-color-gray
+            - .bg-color-black
+            - .bg-color-main
+            - .bg-color-secondary 
+        + Text Colors
+            - .text-color-white
+            - .text-color-gray
+            - .text-color-black
+            - .text-color-main
+            - .text-color-secondary 
+        + Buttons styles
+            - white styles
+                --- .btn-white-main
+                --- .btn-white-secondary
+                --- .btn-white-black
+                --- .btn-white-gradient
+            - Gray Style
+                --- .btn-gray
+            - Button main 
+                --- .btn-main
+            - Button secondary
+                --- .btn-secondary
+            - Gradient style
+                --- .btn-gradient
+            - Black Style
+                --- .btn-black
+            
+        + Typography
+            - Titles
+                --- .title
+                --- .section-title
+            - Paragraph
+                --- .paragraph
+        + Zooming Img        
+            - .zoomIn-img --> for Zooming In Images
+    
+    * You can also use Bootstrap 4 Utilities : 
+    https://www.w3schools.com/bootstrap4/bootstrap_utilities.asp     
+ 
+ ========================================= */
+
+
+/* ====================================
+Gradient Background & Text
+======================================*/
+/* Background */
+.gradient-background {
+    background: color(gradient);
+}
+
+.gradient-background-2 {
+    background: color(gradient2);
+}
+
+.gradient-background-3 {
+    background: color(gradient3);
+}
+
+/* Gradient text*/
+
+.gradient-text {
+    @include gradient-text();
+}
+
+/*====================================
+ Background color
+ =======================================*/
+
+.bg-color-main {
+    background-color: color(main)
+}
+
+.bg-color-secondary {
+    background-color: color(secondary)
+}
+
+.bg-color-white {
+    background-color: color(theme-white);
+}
+
+.bg-color-gray {
+    background-color: color(theme-white-dark);
+}
+
+.bg-color-black {
+    background-color: color(theme-black)
+}
+
+/*====================================
+ Text Color 
+=======================================*/
+.text-color-main {
+    color: color(main)
+}
+
+.text-color-secondary {
+    color: color(secondary)
+}
+
+.text-color-white {
+    color: color(theme-white);
+}
+
+.text-color-gray {
+    color: color(gray);
+}
+
+.text-color-black {
+    color: color(theme-black)
+}
+
+
+/*======================
+    Buttons styles
+    =========================*/
+
+/*  white  styles*/
+
+.btn-white-main {
+    @extend .btn;
+    background: color(theme-white);
+    color: color(main);
+
+    &:hover,
+    &:focus,
+    &:active {
+        background: color(main);
+        color: color(theme-white);
+    }
+}
+
+.btn-white-secondary {
+    @extend .btn;
+    background: color(theme-white);
+    color: color(secondary);
+
+    &:hover,
+    &:focus,
+    &:active {
+        background: color(secondary);
+        color: color(theme-white);
+    }
+}
+
+.btn-white-black {
+    @extend .btn;
+    background: color(theme-white);
+    color: color(theme-black);
+
+    &:hover,
+    &:focus,
+    &:active {
+        background: color(theme-black);
+        color: color(theme-white);
+    }
+}
+
+.btn-white-gradient {
+    @extend .btn;
+    background: color(theme-white);
+    color: $color-black;
+    font-weight: 500;
+
+
+    &:hover,
+    &:focus,
+    &:active {
+        background: color(gradient);
+        color: color(theme-white);
+        border: 0;
+    }
+}
+
+[class*=btn-white] {
+
+    i {
+        @include gradient-text;
+    }
+
+    &:hover,
+    &:focus {
+        border: 0;
+
+        i {
+            -webkit-text-fill-color: color(theme-white);
+            color: color(theme-white);
+        }
+    }
+}
+
+/* Gray Style */
+.btn-gray {
+    @extend .btn;
+    background: $color-gray-light;
+    color: $color-gray;
+
+    &:hover,
+    &:focus,
+    &:active {
+        background: color(main);
+        color: color(theme-white);
+    }
+}
+
+/* Button main */
+
+.btn-main {
+    @extend .btn;
+    background: color(main);
+    color: color(theme-white);
+
+    &:hover,
+    &:focus,
+    &:active {
+        color: color(main);
+        background: color(theme-white);
+    }
+}
+
+/* Button secondary */
+
+.btn-secondary {
+    @extend .btn;
+    background: color(secondary);
+    color: color(theme-white);
+
+    &:hover,
+    &:focus,
+    &:active {
+        color: color(main);
+        background: color(theme-white);
+    }
+}
+
+/*  Gradient style */
+.btn-gradient {
+    @extend .btn;
+    color: color(theme-white);
+    background: color(gradient2);
+
+    &:hover,
+    &:focus,
+    &:active {
+        background: color(theme-white);
+        color: color(main);
+    }
+}
+
+/* Black Style */
+
+.btn-black {
+    @extend .btn;
+    background: $color-black;
+    color: color(theme-white);
+
+    &:hover,
+    &:focus,
+    &:active {
+        background: color(theme-white);
+        color: $color-black;
+    }
+}
+
+/*====================================
+Typography  
+=======================================*/
+
+/* Titles */
+
+.title {
+    margin-bottom: 30px;
+    line-height: 1.6;
+    color: $color-black;
+    font-weight: 900;
+    text-transform: capitalize;
+
+    *:not(i):not(p):not(small) {
+        font-weight: 900;
+
+    }
+
+    p,
+    small {
+        text-transform: capitalize;
+        margin-bottom: 0;
+        font-weight: 400;
+    }
+
+    p {
+        font-size: 16px;
+        color: $color-gray;
+    }
+
+    small {
+        font-size: 35%;
+        line-height: 1;
+    }
+
+    strong {
+        text-transform: capitalize;
+        color: color(main);
+        padding: 0 8px;
+        display: inline-block;
+
+    }
+
+    // Style 2
+    &.style-2 {
+        text-transform: capitalize;
+        color: $color-black;
+        font-weight: 500;
+        position: relative;
+        display: block;
+
+        &:before {
+            content: '';
+            width: 50px;
+            height: 2px;
+            background: color(main);
+            position: absolute;
+            left: 0;
+            bottom: -6px;
+        }
+    }
+}
+
+.section-title {
+    @extend .title;
+    margin-bottom: 50px;
+}
+
+
+/* Paragraph
+----------------- */
+
+.paragraph {
+    padding: 10px 0;
+    margin-bottom: 0;
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 1.67;
+    color: $color-gray;
+}
+
+/*====================================
+Zoom In Images
+=======================================*/
+
+
+.zoomIn-img {
+
+    cursor: zoom-in;
+
+}

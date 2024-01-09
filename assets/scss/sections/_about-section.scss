@@ -1,0 +1,55 @@
+/* =========================================
+ About section 
+ =========================================*/
+
+#about-section {
+    .container {
+        position: relative;
+    }
+
+    .card {
+        border-radius: $border-radius-common;
+        text-align: center;
+        padding: 0 20px;
+        margin-bottom: 25px;
+        background: transparent;
+
+        .card-title {
+            color: $color-black;
+            text-transform: capitalize;
+
+            i {
+                font-size: 34px;
+                margin-bottom: 10px;
+                width: 60px;
+                height: 60px;
+                border-radius: 50%;
+                background: #fff;
+                display: inline-flex;
+                justify-content: center;
+                align-items: center;
+                flex-flow: row;
+                text-align: center;
+                margin-bottom: 20px;
+
+                &::before {
+                    @include gradient-text;
+                }
+            }
+        }
+
+        p {
+            margin: 0;
+            color: $color-gray;
+        }
+
+        &:hover {
+            i {
+
+                box-shadow: $shadow-box-light;
+                filter: none;
+            }
+
+        }
+    }
+}

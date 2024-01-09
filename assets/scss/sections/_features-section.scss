@@ -1,0 +1,58 @@
+/* =========================================
+ Features Section  
+ =========================================*/
+
+#features-section {
+  background: color(theme-white-dark);
+
+  .features-list {
+    margin-bottom: 0;
+
+    padding: 0;
+
+    .card {
+      border-radius: 100px;
+      overflow: hidden;
+      margin: 0 auto 30px;
+      padding: 0;
+      box-shadow: $shadow-box-light;
+
+      .card-title {
+        background: color(theme-white);
+        display: flex;
+        flex-flow: row;
+        align-items: center;
+        margin: 0;
+
+        p {
+          margin: 0;
+          font-size: 17px;
+          font-weight: 500;
+        }
+
+        i {
+          font-size: 20px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 45px;
+          height: 45px;
+          background: color(gradient2);
+          color: color(theme-white);
+          border-radius: 50%;
+          text-align: center;
+          margin: 10px;
+        }
+      }
+    }
+  }
+
+
+  #intro-section+& {
+    background: color(theme-white) !important;
+
+    &:before {
+      content: none !important;
+    }
+  }
+}
