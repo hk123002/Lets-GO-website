@@ -809,7 +809,7 @@ img:after {
 /* Variables */
 :root {
   /* Theme's color */
-  --color-main: #5BE7C4;
+  --color-main: #623edd;
   --color-secondary: #50C1E9;
   --color-gradient: linear-gradient(var(--gradient-direction), var(--color-main), var(--color-secondary));
   --color-gradient2: linear-gradient(45deg, var(--color-main), var(--color-secondary));
