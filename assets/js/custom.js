@@ -1,6 +1,6 @@
 /*!
  * Main Custom Js File 
- * Project : Xena - HTML App Landing Page Template
+ * Project : AGHUB - HTML App Landing Page Template
  * Version : 1.0
  * Primary use : Templates / Creative / showcase / Business /Mobile /App
  * Authors: 
